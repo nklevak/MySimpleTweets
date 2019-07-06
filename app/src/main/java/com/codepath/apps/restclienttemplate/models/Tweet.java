@@ -19,6 +19,7 @@ public class Tweet {
     public User user;
     public String createdAt;
     public String relativeDate;
+//    public String additionalImageUrl;
 
     // "deserialize" aka get information from the JSON
     public static Tweet fromJSON(JSONObject jsonObject) throws JSONException {
@@ -30,7 +31,16 @@ public class Tweet {
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
         tweet.relativeDate = tweet.getRelativeTime(tweet.createdAt);
-
+        // extract image url
+//        JSONObject url = jsonObject.getJSONObject("entities").getJSONArray("media").getJSONObject(0);
+//        if (url.getString("media_url_https") != null) {
+//            tweet.additionalImageUrl = url.getString("media_url_https");
+//        }
+//        else {
+//            tweet.additionalImageUrl = null;
+//        }
+//        tweet.additionalImageUrl = url.getString("media_url_https");
+//        tweet.additionalImageUrl = url.getString("url");
         return tweet;
     }
 

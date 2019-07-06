@@ -47,7 +47,6 @@ public class ComposeActivity extends AppCompatActivity {
         client = TwitterApp.getRestClient(this);
         tvCounter = this.findViewById(R.id.tvCounter);
 
-        //todo--set username and profile image
         // gets User and sets username and profile image
         client.getUserInfo(new JsonHttpResponseHandler() {
             @Override

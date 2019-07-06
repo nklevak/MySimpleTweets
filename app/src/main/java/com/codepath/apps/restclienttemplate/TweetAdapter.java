@@ -53,6 +53,13 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         Glide.with(context)
                 .load(tweet.user.profileImageUrl)
                 .into(holder.ivProfileImage);
+
+//        // to get additional tweet images to load
+//        if (tweet.additionalImageUrl != null) {
+//            Glide.with(context)
+//                    .load(tweet.additionalImageUrl)
+//                    .into(holder.ivTweetImage);
+//        }
     }
 
     @Override
@@ -67,6 +74,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         public TextView tvBody;
         public TextView tvTime;
         public TextView tvName;
+        public ImageView ivTweetImage;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -77,10 +85,10 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
             tvBody = itemView.findViewById(R.id.tvBody);
             tvTime = itemView.findViewById(R.id.tvTime);
             tvName = itemView.findViewById(R.id.tvName);
+            ivTweetImage = itemView.findViewById(R.id.ivTweetImage);
         }
     }
 
-    // todo--JUST ADDED
     // Clean all elements of the recycler
     public void clear() {
         mTweets.clear();
