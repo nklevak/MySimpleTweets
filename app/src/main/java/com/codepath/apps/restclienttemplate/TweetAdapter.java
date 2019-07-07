@@ -54,12 +54,12 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
                 .load(tweet.user.profileImageUrl)
                 .into(holder.ivProfileImage);
 
-//        // to get additional tweet images to load
-//        if (tweet.additionalImageUrl != null) {
-//            Glide.with(context)
-//                    .load(tweet.additionalImageUrl)
-//                    .into(holder.ivTweetImage);
-//        }
+        // to get additional tweet images to load
+        if (tweet.additionalImageUrl != null) {
+            Glide.with(context)
+                    .load(tweet.additionalImageUrl)
+                    .into(holder.ivTweetImage);
+        }
     }
 
     @Override
