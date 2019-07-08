@@ -56,9 +56,13 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
 
         // to get additional tweet images to load
         if (tweet.additionalImageUrl != null) {
+            holder.ivTweetImage.getLayoutParams().height = 300;
             Glide.with(context)
                     .load(tweet.additionalImageUrl)
                     .into(holder.ivTweetImage);
+        }
+        else {
+            holder.ivTweetImage.getLayoutParams().height = 0;
         }
     }
 
